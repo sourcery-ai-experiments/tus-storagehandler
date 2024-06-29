@@ -1,6 +1,4 @@
-# Crypt4GH Middleware for proTES
-[![license][badge-license]][badge-url-license]
-[![chat][badge-chat]][badge-url-chat]
+# TUS Storage Handler
 
 ## Synopsis
 This Flask application provides endpoints for uploading, downloading, and listing files in a MinIO bucket, with TUS protocol support for uploads and CORS enabled for cross-origin requests.
@@ -24,17 +22,6 @@ Download the required dependencies
 
 `flask run`
 The application will be running on `http://127.0.0.1:5000` by default.
-
-## Contributing
-
-## Code of Conduct
-
-## Versioning
-
-## License
-
-This project is distributed under the [Apache License 2.0][badge-license], a
-copy of which is also available in [`LICENSE`][license].
 
 ## Contact
 
