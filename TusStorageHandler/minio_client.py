@@ -17,6 +17,7 @@ Usage:
       - `minio_client`: Initialized Minio client instance
       - `create_bucket()`: Function to create a new bucket if not exists.
 """
+
 import os
 
 from dotenv import load_dotenv
@@ -43,7 +44,7 @@ minio_client = Minio(
 def create_bucket():
   """Creates a new bucket if it does not already exist.
 
-  This function checks if the bucket specified by MINIO_BUCKET_NAME exists. 
+  This function checks if the bucket specified by MINIO_BUCKET_NAME exists.
   If it does not exist, it creates a new bucket using the Minio client instance.
   """
   if not minio_client.bucket_exists(MINIO_BUCKET_NAME):

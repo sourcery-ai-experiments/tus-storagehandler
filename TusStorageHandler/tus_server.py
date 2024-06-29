@@ -12,6 +12,7 @@ class TusServer:
       minio_client (Minio): The Minio client object used for file operations.
       bucket_name (str): The name of the Minio bucket to operate on.
   """
+
   def __init__(self, minio_client, bucket_name):
     """Initializes a new instance of the TusServer class.
 
@@ -60,20 +61,20 @@ class TusServer:
         filename (str): Name to assign to the uploaded file in Minio.
 
     Raises:
-        Exception: If the file cannot be uploaded to Minio or if the file specified 
+        Exception: If the file cannot be uploaded to Minio or if the file specified
                    by `upload_id` does not exist.
 
     """
     file_path = self.get_file_path(upload_id)
     if os.path.exists(file_path):
-        try:
-            # Upload the file to Minio
-            self.minio_client.fput_object(self.bucket_name, filename, file_path)
-        except S3Error as err:
-            print(f"Failed to upload file to Minio: {err}")
-            raise Exception("Failed to upload file to Minio") from err
-        finally:
-            # Remove the temporary file
-            os.remove(file_path)
+      try:
+        # Upload the file to Minio
+        self.minio_client.fput_object(self.bucket_name, filename, file_path)
+      except S3Error as err:
+        print(f"Failed to upload file to Minio: {err}")
+        raise Exception("Failed to upload file to Minio") from err
+      finally:
+        # Remove the temporary file
+        os.remove(file_path)
     else:
-        raise Exception(f"File not found for upload_id: {upload_id}")
+      raise Exception(f"File not found for upload_id: {upload_id}")
