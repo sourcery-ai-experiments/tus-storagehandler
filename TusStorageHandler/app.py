@@ -104,4 +104,4 @@ def upload_file():
         return jsonify({'success': success_responses}), 201
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

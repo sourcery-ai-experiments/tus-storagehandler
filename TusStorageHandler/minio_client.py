@@ -10,9 +10,8 @@ MINIO_PORT = os.getenv("MINIO_PORT")
 MINIO_ENDPOINT = f"{MINIO_HOSTNAME}:{MINIO_PORT}"
 MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY")
 MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
-MINIO_IS_SECURE = os.getenv("MINIO_IS_SECURE")
+MINIO_IS_SECURE = os.getenv("MINIO_IS_SECURE","true")
 MINIO_BUCKET_NAME=os.getenv("MINIO_BUCKET_NAME")
-assert MINIO_IS_SECURE is not None
 
 minio_client = Minio(
     endpoint=MINIO_ENDPOINT,
