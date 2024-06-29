@@ -1,7 +1,7 @@
 # TUS Storage Handler
 
 ## Synopsis
-This Flask application provides endpoints for uploading, downloading, and listing files in a MinIO bucket, with TUS protocol support for uploads and CORS enabled for cross-origin requests.
+This Flask application provides endpoints for uploading, downloading, and listing files in a MinIO bucket, with TUS protocol support for uploads, and CORS enabled for cross-origin requests.
 
 ## Installation
 
