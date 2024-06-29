@@ -1,0 +1,21 @@
+{
+  "template": "D:\\open-source\\gsoc\\cookiecutter-python",
+  "commit": "7962344936dd1d331da1495ea5f258d18b7c883a",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "author_name": "Elixir Cloud AAI",
+      "author_email": "cloud-service@elixir-europe.org",
+      "development_status": "Beta",
+      "short_description": "A short description of the project.",
+      "project_name": "TusStorageHandler",
+      "project_slug": "TusStorageHandler",
+      "github_username": "elixir-cloud-aai",
+      "python_version": "3.11",
+      "add_script": "y",
+      "year": "2024",
+      "_template": "D:\\open-source\\gsoc\\cookiecutter-python"
+    }
+  },
+  "directory": null
+}

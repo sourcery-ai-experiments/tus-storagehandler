@@ -1,0 +1,84 @@
+---
+name: Code Quality
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        uses: ./.github/actions/setup/poetry
+        with:
+          os: ${{ job.os }}
+          python-version: '3.11'
+          poetry-install-options: "--only=lint --no-root"
+          poetry-export-options: "--only=lint"
+
+      - name: Check code style
+        run: poetry run ruff format --check
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        uses: ./.github/actions/setup/poetry
+        with:
+          os: ${{ job.os }}
+          python-version: '3.11'
+          poetry-install-options: "--only=lint --no-root"
+          poetry-export-options: "--only=lint"
+
+      - name: Check code quality
+        run: poetry run ruff check .
+
+  spell-check:
+    name: Spell Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        uses: ./.github/actions/setup/poetry
+        with:
+          os: ${{ job.os }}
+          python-version: '3.11'
+          poetry-install-options: "--only=lint --no-root"
+          poetry-export-options: "--only=lint"
+
+      - name: Check spellings
+        run: poetry run typos .
+
+  type-check:
+    name: Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        uses: ./.github/actions/setup/poetry
+        with:
+          os: ${{ job.os }}
+          python-version: '3.11'
+          poetry-install-options: "--only=types --no-root"
+          poetry-export-options: "--only=types"
+
+      - name: Check types
+        run: poetry run mypy TusStorageHandler/
+...
