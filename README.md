@@ -22,12 +22,3 @@ Download the required dependencies
 
 `flask run`
 The application will be running on `http://127.0.0.1:5000` by default.
-
-## Contact
-
-The project is maintained by [ELIXIR Cloud & AAI][elixir-cloud-aai], a Driver
-Project of the [Global Alliance for Genomics and Health (GA4GH)][ga4gh], under
-the umbrella of the [ELIXIR][elixir] [Compute Platform][elixir-compute].
-
-- For filing bug reports, feature requests or other code-related issues, please
-  make use of the project's [issue tracker](https://github.com/elixir-cloud-aai/tus-storagehandler/issues).
