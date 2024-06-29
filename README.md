@@ -16,7 +16,7 @@ Download the required dependencies
 
 1. Navigate to the folder `TusStorageHandler`
 2. Create a virtual environment and activate it (optional)
-3. `pip install requirements.txt`
+3. `pip install -r requirements.txt`
 
 ### Running the application
 
