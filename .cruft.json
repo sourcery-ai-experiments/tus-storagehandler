@@ -7,7 +7,7 @@
       "author_name": "Elixir Cloud AAI",
       "author_email": "cloud-service@elixir-europe.org",
       "development_status": "Beta",
-      "short_description": "A short description of the project.",
+      "short_description": "File Handler using TUS and Minio(S3 Storage).",
       "project_name": "TusStorageHandler",
       "project_slug": "TusStorageHandler",
       "github_username": "elixir-cloud-aai",

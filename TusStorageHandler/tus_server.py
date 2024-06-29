@@ -31,7 +31,7 @@ class TusServer:
         upload_id (str): Unique identifier for the upload.
 
     Returns:
-        str: File path within the 'uploads' directory corresponding to the upload_id.
+      str: File path within the 'uploads' directory corresponding to the upload_id.
 
     """
     return os.path.join("uploads", upload_id)
@@ -48,7 +48,8 @@ class TusServer:
 
     """
     file_path = self.get_file_path(upload_id)
-    if not os.path.exists(file_path):
+    # Check if the path exists
+    if not file_path.exists():
       os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, "wb") as f:
       f.write(file_content)
